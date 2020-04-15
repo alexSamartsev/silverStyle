@@ -1,0 +1,119 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: #EEEEEE;
+    font-family: 'Comfortaa', open-sans;
+    box-sizing: border-box;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 60px;
+}
+h1{
+
+}
+.container{
+    box-sizing: border-box;
+    padding: 60px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+background: #eeeeee;
+box-shadow:  11px 11px 24px #d6d6d6, 
+             -11px -11px 24px #ffffff;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+.header{
+    
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    height: 85px;
+    width: 100%;
+}
+.logo{
+    height: 100%;
+}
+.logo img{
+    height: 100%;
+}
+.contacts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.contacts a{
+    text-decoration: none;
+    color:#000;
+}
+.contacts .phone{
+    font-size: 30px;
+    font-weight: 700;
+    color: #00488F;
+}
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.left, .right{
+    border: 1px solid black;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+.content h1{
+    text-transform: uppercase;
+    font-size: 64px;
+    
+    font-weight: 700;
+    color: #00488F;
+    margin-bottom: 60px;
+}
+.content h1 span{
+    text-transform: lowercase;
+}
+.content h1 .darkerText{
+    color: #002B4E;
+    text-transform: uppercase;
+}
+.content h1 .higlight{
+    color: #002B4E;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+.content h1 .higlight:before{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    background: #FFE826;
+    height: 50%;
+    width: 100%;
+}
+.content .btn{
+    color:#002B4E;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+    display: block;
+    background: #FFE826;
+    border-radius: 50px;
+    padding: 15px 30px ;
+}
