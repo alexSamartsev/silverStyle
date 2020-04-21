@@ -5,24 +5,33 @@ const slider = (container, navigation, time) =>{
     const items = document.querySelector(container).children;
     console.log(items.length);
 
-    createNav(slider, items);
+    var nav = createNav(slider, items);
+    console.log(nav);
 
     let i = 0;
+    changeNav(slider, i);
     items[i].classList.add("activeSlide");
-
+    
+    changeNav(nav, i);
 
     const loop = setInterval(()=>{
         if(i < items.length){
             console.log(i + " < " + items.length);
-            let curr = slider.querySelector('.activeSlide');
+            clearStyle(items);
+
+            /* let curr = slider.querySelector('.activeSlide');
             curr.classList.add('slideOut');
-            curr.classList.remove('activeSlide');
+            curr.classList.remove('activeSlide'); 
             curr.classList.remove('slideOut');
-            //slider.querySelector('.slideOut').classList.remove('slideOut');
+            slider.querySelector('.slideOut').classList.remove('slideOut'); */
             items[i].classList.add('activeSlide');
+            changeNav(nav, i);
             i++;
         } else{
             i=0;
+            clearStyle(items);
+            items[i].classList.add("activeSlide");
+            changeNav(nav, i);
             console.log('reset');
         }
         
@@ -36,7 +45,21 @@ const slider = (container, navigation, time) =>{
         Array.from(items).forEach((item, i)=>{
             nav.appendChild(document.createElement('div')).classList.add('slider_nav-item');
         });
-        
+        return nav;
+    }
+    function changeNav(nav, i){
+        const items = nav.children;
+        Array.from(items).forEach((item)=>{
+            item.classList.remove('active');
+        });
+        items[i].classList.add('active');
+        //const nav = parent.querySelector('slider_nav').children;
+        //console.log(nav);
+    }
+    function clearStyle(items){
+        Array.from(items).forEach((item)=>{
+            item.classList.remove('activeSlide');
+        });
     }
 
 
